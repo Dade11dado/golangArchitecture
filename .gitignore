@@ -27,6 +27,11 @@ go.work.sum
 # env file
 .env
 
+#workspace for editors
+.sublime-workspace
+.sublime.editors
+.code-workspace
+
 # Editor/IDE
 # .idea/
 # .vscode/
