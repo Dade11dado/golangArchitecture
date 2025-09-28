@@ -37,15 +37,21 @@ func main() {
 
 	fmt.Println("back to Go:", xp2)
 
-	http.HandleFunc("/encode",foo)
-	http.HandleFunc("/decode",bar)
-	http.ListenAndServe(":8080",nil)
+	http.HandleFunc("/encode", foo)
+	http.HandleFunc("/decode", bar)
+	http.ListenAndServe(":8080", nil)
 }
 
-func foo (w http.ResponseWriter, req *http.Request){
-	
+func foo(w http.ResponseWriter, req *http.Request) {
+	p1 := person{
+		"Jenny",
+	}
+	err := json.NewEncoder(w).Encode(p1)
+	if err != nil {
+		log.Println(err)
+	}
 }
 
-func bar (w http.ResponseWriter, req *http.Request){
+func bar(w http.ResponseWriter, req *http.Request) {
 
 }
